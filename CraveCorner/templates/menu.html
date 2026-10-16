@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}The menu — CraveCorner{% endblock %}
+{% block page_id %}menu{% endblock %}
+{% block content %}
+<section class="menu-top"><div class="container"><div class="eyebrow">Cooked with care, priced for campus</div><h1>Find your comfort.</h1><p>A little something for the short break, the long day, and everything in between.</p></div></section>
+<section class="container section-tight">
+  <form class="menu-controls" data-menu-filters role="search">
+    <label class="field search-field"><span class="sr-only">Search menu</span><input class="field" style="border:0;background:transparent;width:100%;padding:0" type="search" name="search" placeholder="Search dishes…" aria-label="Search dishes"></label>
+    <label class="filter-check"><input type="checkbox" name="vegetarian" value="true"> Vegetarian</label>
+  </form>
+  <div class="category-tabs" data-category-tabs aria-label="Menu categories"><button class="category-tab" type="button" aria-pressed="true" data-category="">Everything</button></div>
+  <div class="results-count" data-menu-count aria-live="polite"></div>
+  <div class="dish-grid" data-menu-grid aria-live="polite"><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/customer.js" defer></script>{% endblock %}

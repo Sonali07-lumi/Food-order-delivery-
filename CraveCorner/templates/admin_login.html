@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Staff sign in — CraveCorner{% endblock %}
+{% block page_id %}admin-login{% endblock %}
+{% block header %}<header class="admin-header"><a class="admin-brand" href="/"><span class="brand-mark">C</span>CraveCorner <span style="font:500 .76rem var(--sans);color:#d9c8c5">/ Staff</span></a><a href="/" style="font-size:.85rem;color:#eadbb7">Back to customer site</a></header>{% endblock %}
+{% block footer %}{% endblock %}
+{% block content %}
+<div class="admin-login-wrap"><form class="admin-login" data-admin-login novalidate><div class="eyebrow">Staff access</div><h1>Welcome back.</h1><p class="muted">Sign in to see the live kitchen queue and administer orders.</p><div data-login-message aria-live="assertive"></div><div class="form-group"><label for="username">Username</label><input id="username" name="username" autocomplete="username" required maxlength="80"></div><div class="form-group"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="200"></div><button class="button" type="submit" data-login-submit>Sign in to the kitchen</button><p class="form-help" style="margin-top:1rem">Staff credentials are provided by your administrator.</p></form></div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/admin.js" defer></script>{% endblock %}

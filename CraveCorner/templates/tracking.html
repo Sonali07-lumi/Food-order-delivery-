@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Track your order — CraveCorner{% endblock %}
+{% block page_id %}tracking{% endblock %}
+{% block content %}
+<section class="status-banner"><div class="container"><div class="eyebrow">The kitchen, in real time</div><h1>Your order, your place.</h1><p>We’ll show you what’s happening—not what we hope is happening.</p></div></section>
+<section class="container">
+  <div class="tracking-card">
+    <form class="tracking-search" data-track-form><label class="sr-only" for="track-number">Order number</label><input id="track-number" name="order_number" required placeholder="Enter your order number" aria-describedby="track-help"><button class="button" type="submit">Find my order</button></form>
+    <p id="track-help" class="form-help" style="margin-top:.5rem">Your order number is on the confirmation screen.</p>
+    <div data-track-result aria-live="polite"></div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/customer.js" defer></script>{% endblock %}

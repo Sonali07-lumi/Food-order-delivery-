@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Your bag — CraveCorner{% endblock %}
+{% block page_id %}cart{% endblock %}
+{% block content %}
+<section class="container">
+  <header class="page-title"><div class="eyebrow">A very good choice</div><h1>Your bag.</h1><p>Take one last look at your order before we get cooking.</p></header>
+  <div class="cart-layout">
+    <div data-cart-list aria-live="polite"><div class="skeleton-card"></div></div>
+    <aside class="cart-summary" data-cart-summary><h2>Order total</h2><div class="summary-line"><span>Items</span><span data-summary-count>0</span></div><div class="summary-line summary-total"><span>Total</span><span data-summary-total>₹0</span></div><a class="button button-gold" href="/checkout" data-checkout-link>Continue to details →</a><p style="font-size:.78rem;color:#e4d8d0;margin:1rem 0 0">Final total confirmed by the kitchen when you place your order.</p></aside>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/customer.js" defer></script>{% endblock %}

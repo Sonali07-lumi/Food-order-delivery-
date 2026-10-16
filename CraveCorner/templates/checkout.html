@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Checkout — CraveCorner{% endblock %}
+{% block page_id %}checkout{% endblock %}
+{% block content %}
+<section class="container">
+  <header class="page-title"><div class="eyebrow">Nearly there</div><h1>Let’s make it yours.</h1><p>Just the details we need to get your food to you.</p></header>
+  <div class="checkout-layout">
+    <form class="form-panel" data-checkout-form novalidate>
+      <h2>Your details</h2><div data-form-message aria-live="assertive"></div>
+      <div class="form-grid">
+        <div class="form-group full"><label for="customer-name">Name</label><input id="customer-name" name="customer_name" autocomplete="name" required minlength="2" maxlength="100" placeholder="What should we call you?"></div>
+        <div class="form-group"><label for="customer-phone">Phone number</label><input id="customer-phone" name="customer_phone" autocomplete="tel" inputmode="tel" required minlength="10" maxlength="16" placeholder="10–16 digits"></div>
+        <div class="form-group"><label for="delivery-address">Pickup / delivery note <span class="muted">(optional)</span></label><input id="delivery-address" name="delivery_address" maxlength="500" placeholder="Hostel, block, or pickup point"></div>
+      </div>
+      <p class="form-help">Your phone number helps you identify and track your order. We’ll only use the details for this order.</p>
+      <button class="button" type="submit" data-submit-order>Place my order <span aria-hidden="true">→</span></button>
+    </form>
+    <aside class="order-panel"><h2>In your bag</h2><div data-checkout-summary aria-live="polite"><div class="skeleton"></div><div class="skeleton"></div></div><div class="summary-line summary-total"><span>Estimated total</span><span data-checkout-total>₹0</span></div><p class="muted" style="font-size:.8rem">The API confirms your final rupee total when your order is accepted.</p></aside>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/customer.js" defer></script>{% endblock %}

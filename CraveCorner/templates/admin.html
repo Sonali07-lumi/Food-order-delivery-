@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Kitchen dashboard — CraveCorner{% endblock %}
+{% block page_id %}admin{% endblock %}
+{% block header %}{% endblock %}{% block footer %}{% endblock %}
+{% block content %}
+<div class="admin-shell">
+  <header class="admin-header"><a class="admin-brand" href="/admin"><span class="brand-mark">C</span>CraveCorner <span style="font:500 .76rem var(--sans);color:#d9c8c5">/ Kitchen</span></a><div style="display:flex;align-items:center;gap:1rem"><span data-admin-user style="font-size:.85rem"></span><button class="button button-gold button-small" type="button" data-logout>Sign out</button></div></header>
+  <div class="admin-main" id="admin-main">
+    <div class="admin-title"><div><div class="eyebrow">Live service</div><h1>Kitchen dashboard</h1><p>Real orders, in the order they arrived.</p></div><div style="font-size:.82rem;color:var(--muted)" data-last-updated>Refreshing live…</div></div>
+    <div data-admin-error aria-live="assertive"></div>
+     <div class="admin-toolbar"><button class="button button-small button-outline" type="button" data-refresh-orders>Refresh orders</button><button class="button button-small" type="button" data-show-completed>View completed orders</button></div>
+    <section class="stat-grid" aria-label="Live order statistics" data-admin-stats><div class="stat-card"><span class="skeleton"></span></div><div class="stat-card"><span class="skeleton"></span></div><div class="stat-card"><span class="skeleton"></span></div><div class="stat-card"><span class="skeleton"></span></div><div class="stat-card"><span class="skeleton"></span></div></section>
+    <div class="admin-columns">
+      <section class="admin-panel"><h2>FIFO queue</h2><p class="muted" style="font-size:.84rem">First in, first out. The front order is next to move.</p><div data-admin-queue aria-live="polite"><div class="skeleton"></div><div class="skeleton"></div></div></section>
+      <section class="admin-panel"><h2>All orders</h2><div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody data-admin-orders><tr><td colspan="6"><div class="skeleton"></div></td></tr></tbody></table></div></section>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/admin.js" defer></script>{% endblock %}

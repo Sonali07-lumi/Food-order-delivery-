@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Order received — CraveCorner{% endblock %}
+{% block page_id %}confirmation{% endblock %}
+{% block content %}
+<section class="container confirmation" data-confirmation data-order-number="{{ order_number }}">
+  <div class="confirmation-mark" aria-hidden="true">✓</div><div class="eyebrow">A good thing is on its way</div><h1>Order received.</h1>
+  <p class="muted">Your order has joined the kitchen queue. We’ll make it in the order it arrived.</p>
+  <div class="confirmation-box"><div class="eyebrow">Keep this number close</div><div class="confirmation-number" data-confirmation-number>{{ order_number }}</div><p class="muted" style="margin:.7rem 0 0">Use it any time to check your order’s real status.</p></div>
+  <div class="confirmation-actions"><a class="button" href="/tracking?order={{ order_number }}">Track your order →</a><a class="button button-outline" href="/menu">Back to menu</a></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/customer.js" defer></script>{% endblock %}
